@@ -1,0 +1,119 @@
+:root{
+    /*Primary Colors*/
+    --lightRed: hsl(0, 100%, 67%);
+    --orangeyYellow: hsl(39, 100%, 56%);
+    --greenTeal: hsl(166, 100%, 37%);
+    --cobaltBlue: hsl(234, 85%, 45%);
+    /*Colors for background gradients*/
+    --lightSlateBlue: hsl(252, 100%, 67%);
+    --lightRoyalBlue: hsl(241, 81%, 54%);
+    --violetBlue: hsla(256, 72%, 46%, 1);
+    --persianBlue: hsla(241, 72%, 46%, 0);
+    /*Neutral colors*/
+    --white: hsl(0, 0%, 100%);
+    --paleBlue: hsl(221, 100%, 96%);
+    --lightLavender: hsl(241, 100%, 89%);
+    --lightLavenderAlpha: hsla(241, 100%, 89%, 0.5);
+    --darkGrayBlue: hsl(224, 30%, 27%);
+    /*Font weights*/
+    --fwNormal: 500;
+    --fwBold: 700;
+    --fwSuperBold: 800;
+}
+/*declaration of the main font from ttf file*/
+@font-face {
+    font-family: 'HankenGrotesk';
+    src: url(assets/fonts/HankenGrotesk-VariableFont_wght.ttf) format('truetype');
+    font-weight: 500 800;
+}
+/*lines to the horizontal line are a CSS reset partially inspired by https://www.joshwcomeau.com/css/custom-css-reset/ */
+*, *::after, *::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%; 
+}
+input, button, textarea, select {
+    font: inherit;
+}
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+/*--------------------------------------------------*/
+/*utility flex class*/
+.u-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body{
+    height: 100vh;
+    font-family: 'HankenGrotesk';
+    font-size: 1.125rem;
+    -webkit-font-smoothing: antialiased;
+}
+
+.main-container{
+    flex-direction: column;
+    height: 98%;
+}
+
+.result-section{
+    background: linear-gradient(var(--lightSlateBlue), var(--lightRoyalBlue));
+    color: var(--lightLavender);
+    border-radius: 0 0 2rem 2rem;
+    height: 45%;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.result-section>h1{
+    font-size: 1.25rem;
+}
+
+.result-circle{
+    border-radius: 50%;
+    background: linear-gradient(var(--violetBlue), var(--persianBlue));
+    padding: 1.75rem 2.75rem;
+    text-align: center;
+    aspect-ratio: 1/1;
+    font-weight: var(--fwBold);
+}
+
+.result-circle>h2{
+    font-size: 4rem;
+    color: var(--white);
+}
+
+.result-circle>p{
+    color: var(--lightLavenderAlpha);
+}
+
+.result-section>h3{
+    color: var(--white);
+    font-size: 1.65rem;
+}
+
+.result-description{
+    padding: 0 2.5rem 1.5rem 2.5rem;
+    text-align: center;
+    font-size: 1.05rem;
+}
+
+.summary-section{
+    height: 55%;
+}
+
+.attribution{
+    height: 2%;
+    font-size: 11px; 
+    text-align: center; 
+}
+
+.attribution a{
+    color: hsl(228, 45%, 44%); 
+}

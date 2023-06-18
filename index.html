@@ -2,46 +2,52 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js" defer></script>
+  <script src="main.js" type="text/javascript" defer></script>
   <title>Frontend Mentor | Results summary component</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
-
-  Your Result
-  76
-  of 100
-
-  Great
-  You scored higher than 65% of the people who have taken these tests.
-  
-  Summary
-
-  Reaction
-  80 / 100
-
-  Memory
-  92 / 100
-
-  Verbal
-  61 / 100
-
-  Visual
-  72 / 100
-
-  Continue
-  
-  <div class="attribution">
+  <main class="main-container u-flex">
+    <section class="result-section u-flex">
+      <h1>Your Result</h1>
+      <div class="result-circle">
+        <h2>76</h2>
+        <p>of 100</p>
+      </div>
+      <h3>Great</h3>
+      <p class="result-description">You scored higher than 65% of the people who have taken these tests.</p>
+    </section>
+    <section class="summary-section">
+      <h1>Summary</h1>
+      <div>
+        <img src="assets/images/icon-reaction.svg" alt="Reaction icon">
+        <p>Reaction</p>
+        <p><span class="score-highlight">80</span> / 100</p>
+      </div>
+      <div>
+        <img src="assets/images/icon-memory.svg" alt="Memory icon">
+        <p>Memory</p>
+        <p><span class="score-highlight">92</span> / 100</p>
+      </div>
+      <div>
+        <img src="assets/images/icon-verbal.svg" alt="Verbal icon">
+        <p>Verbal</p>
+        <p><span class="score-highlight">61</span> / 100</p>
+      </div>
+      <div>
+        <img src="assets/images/icon-visual.svg" alt="Visual icon">
+        <p>Visual</p>
+        <p><span class="score-highlight">72</span> / 100</p>
+      </div>
+      <button id="continue-button">Continue</button>
+    </section>
+  </main>
+  <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+    Coded by <a href="https://github.com/luckyszakul0">Łukasz Lubaszewski</a>.
+  </footer>
 </body>
 </html>
