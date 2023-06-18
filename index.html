@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <link rel="stylesheet" href="style.css">
+  <!--jQuery declaration from Google CDN-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js" defer></script>
   <script src="main.js" type="text/javascript" defer></script>
   <title>Frontend Mentor | Results summary component</title>
@@ -22,27 +23,37 @@
     </section>
     <section class="summary-section">
       <h1>Summary</h1>
-      <div>
-        <img src="assets/images/icon-reaction.svg" alt="Reaction icon">
-        <p>Reaction</p>
-        <p><span class="score-highlight">80</span> / 100</p>
+      <div class="grid-section">
+        <div class="summary-component u-flex" id="reaction">
+          <div class="component-title u-flex">
+            <img src="assets/images/icon-reaction.svg" alt="Reaction icon">
+            <p>Reaction</p>
+          </div>
+          <span class="component-score"><span class="score-highlight">80</span> / 100</span>
+        </div>
+        <div class="summary-component u-flex" id="memory">
+          <div class="component-title u-flex">
+            <img src="assets/images/icon-memory.svg" alt="Memory icon">
+            <p>Memory</p>
+          </div>
+          <span class="component-score"><span class="score-highlight">92</span> / 100</span>
+        </div>
+        <div class="summary-component u-flex" id="verbal">
+          <div class="component-title u-flex">
+            <img src="assets/images/icon-verbal.svg" alt="Verbal icon">
+            <p>Verbal</p>
+          </div>
+          <span class="component-score"><span class="score-highlight">61</span> / 100</span>
+        </div>
+        <div class="summary-component u-flex" id="visual">
+          <div class="component-title u-flex">
+            <img src="assets/images/icon-visual.svg" alt="Visual icon">
+            <p>Visual</p>
+          </div>
+          <span class="component-score"><span class="score-highlight">72</span> / 100</span>
+        </div>
+        <button id="continue-button">Continue</button>
       </div>
-      <div>
-        <img src="assets/images/icon-memory.svg" alt="Memory icon">
-        <p>Memory</p>
-        <p><span class="score-highlight">92</span> / 100</p>
-      </div>
-      <div>
-        <img src="assets/images/icon-verbal.svg" alt="Verbal icon">
-        <p>Verbal</p>
-        <p><span class="score-highlight">61</span> / 100</p>
-      </div>
-      <div>
-        <img src="assets/images/icon-visual.svg" alt="Visual icon">
-        <p>Visual</p>
-        <p><span class="score-highlight">72</span> / 100</p>
-      </div>
-      <button id="continue-button">Continue</button>
     </section>
   </main>
   <footer class="attribution">

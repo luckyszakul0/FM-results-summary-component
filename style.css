@@ -1,9 +1,9 @@
 :root{
     /*Primary Colors*/
-    --lightRed: hsl(0, 100%, 67%);
-    --orangeyYellow: hsl(39, 100%, 56%);
-    --greenTeal: hsl(166, 100%, 37%);
-    --cobaltBlue: hsl(234, 85%, 45%);
+    --lightRed: 0, 100%, 67%;
+    --orangeyYellow: 39, 100%, 56%;
+    --greenTeal: 166, 100%, 37%;
+    --cobaltBlue: 234, 85%, 45%;
     /*Colors for background gradients*/
     --lightSlateBlue: hsl(252, 100%, 67%);
     --lightRoyalBlue: hsl(241, 81%, 54%);
@@ -15,6 +15,7 @@
     --lightLavender: hsl(241, 100%, 89%);
     --lightLavenderAlpha: hsla(241, 100%, 89%, 0.5);
     --darkGrayBlue: hsl(224, 30%, 27%);
+    --darkGrayBlueAlpha: hsla(224, 30%, 27%, 0.65);
     /*Font weights*/
     --fwNormal: 500;
     --fwBold: 700;
@@ -50,10 +51,13 @@ p, h1, h2, h3, h4, h5, h6 {
     align-items: center;
 }
 
+html{
+    font-size: 1.125rem;
+}
+
 body{
     height: 100vh;
     font-family: 'HankenGrotesk';
-    font-size: 1.125rem;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -62,30 +66,31 @@ body{
     height: 98%;
 }
 
+/*the purple backround section styles --------------------------------*/
 .result-section{
     background: linear-gradient(var(--lightSlateBlue), var(--lightRoyalBlue));
     color: var(--lightLavender);
     border-radius: 0 0 2rem 2rem;
     height: 45%;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 
 .result-section>h1{
-    font-size: 1.25rem;
+    font-size: 1.15rem;
 }
 
 .result-circle{
     border-radius: 50%;
     background: linear-gradient(var(--violetBlue), var(--persianBlue));
-    padding: 1.75rem 2.75rem;
+    padding: 1.5rem;
     text-align: center;
     aspect-ratio: 1/1;
     font-weight: var(--fwBold);
 }
 
 .result-circle>h2{
-    font-size: 4rem;
+    font-size: 3.25rem;
     color: var(--white);
 }
 
@@ -95,17 +100,105 @@ body{
 
 .result-section>h3{
     color: var(--white);
-    font-size: 1.65rem;
+    font-size: 1.4rem;
 }
 
 .result-description{
-    padding: 0 2.5rem 1.5rem 2.5rem;
+    /* padding: 0 2.5rem 1.5rem 2.5rem; */
+    padding: 0 2.5rem 1rem 2.5rem;
     text-align: center;
-    font-size: 1.05rem;
+    font-size: 0.9rem;
+}
+/*----------------------------------------------------*/
+/*the white background section styles ----------------*/
+.summary-section{
+    width: 100%;
+    height: 55%;
+    padding: 1.75rem;
 }
 
-.summary-section{
-    height: 55%;
+.summary-section>h1{
+    color: var(--darkGrayBlue);
+    font-size: 1rem;
+    font-weight: var(--fwSuperBold);
+    height: 10%;
+}
+
+.grid-section{
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    gap: 1rem;
+    height: 90%;
+}
+
+.summary-component{
+    width: 100%;
+    border-radius: 0.5rem;
+    justify-content: space-between;
+    padding: 0.75rem;
+    font-size: 0.9rem;
+}
+
+.component-title{
+    gap: 0.75rem;
+    font-weight: var(--fwBold);
+}
+
+.component-score{
+    color: var(--darkGrayBlueAlpha);
+    font-weight: var(--fwSuperBold);
+}
+
+.score-highlight{
+    color: var(--darkGrayBlue);
+    letter-spacing: 0.025em;
+}
+
+/*component-specific styles*/
+#reaction{
+    background: hsla(var(--lightRed), 0.075);
+}
+
+#reaction p{
+    color: hsl(var(--lightRed));
+}
+
+#memory{
+    background: hsla(var(--orangeyYellow), 0.075);
+}
+
+#memory p{
+    color: hsla(var(--orangeyYellow));
+}
+
+#verbal{
+    background: hsla(var(--greenTeal), 0.075);
+}
+
+#verbal p{
+    color: hsla(var(--greenTeal));
+}
+
+#visual{
+    background: hsla(var(--cobaltBlue), 0.075);
+}
+
+#visual p{
+    color: hsl(var(--cobaltBlue));
+}
+/*----------------------------------------------------*/
+#continue-button{
+    background: var(--darkGrayBlue);
+    border-radius: 2rem;
+    border: none;
+    color: var(--white);
+    padding: 0.75rem;
+    font-weight: var(--fwBold);
+    cursor: pointer;
+}
+
+#continue-button:is(:hover, :focus){
+    background: linear-gradient(var(--lightSlateBlue), var(--lightRoyalBlue));
 }
 
 .attribution{
