@@ -21,12 +21,26 @@
     --fwBold: 700;
     --fwSuperBold: 800;
 }
+
 /*declaration of the main font from ttf file*/
 @font-face {
     font-family: 'HankenGrotesk';
     src: url(assets/fonts/HankenGrotesk-VariableFont_wght.ttf) format('truetype');
     font-weight: 500 800;
 }
+
+/*declaration of an animation that summary-component class uses*/
+@keyframes slideRight {
+    from{
+        transform: translateX(-80px);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
 /*lines to the horizontal line are a CSS reset partially inspired by https://www.joshwcomeau.com/css/custom-css-reset/ */
 *, *::after, *::before{
     margin: 0;
@@ -44,6 +58,7 @@ p, h1, h2, h3, h4, h5, h6 {
     overflow-wrap: break-word;
 }
 /*--------------------------------------------------*/
+
 /*utility flex class*/
 .u-flex{
     display: flex;
@@ -110,6 +125,7 @@ body{
     font-size: 0.9rem;
 }
 /*----------------------------------------------------*/
+
 /*the white background section styles ----------------*/
 .summary-section{
     width: 100%;
@@ -139,6 +155,10 @@ body{
     justify-content: space-between;
     padding: 0.75rem;
     font-size: 0.9rem;
+    transform: translateX(-80px);
+    opacity: 0;
+    animation: slideRight 800ms forwards;
+    animation-delay: calc(var(--component-index) * 150ms);
 }
 
 .component-title{
@@ -159,6 +179,7 @@ body{
 /*component-specific styles*/
 #reaction{
     background: hsla(var(--lightRed), 0.075);
+    --component-index: 1;
 }
 
 #reaction p{
@@ -167,6 +188,7 @@ body{
 
 #memory{
     background: hsla(var(--orangeyYellow), 0.075);
+    --component-index: 2;
 }
 
 #memory p{
@@ -175,6 +197,7 @@ body{
 
 #verbal{
     background: hsla(var(--greenTeal), 0.075);
+    --component-index: 3;
 }
 
 #verbal p{
@@ -183,12 +206,14 @@ body{
 
 #visual{
     background: hsla(var(--cobaltBlue), 0.075);
+    --component-index: 4;
 }
 
 #visual p{
     color: hsl(var(--cobaltBlue));
 }
 /*----------------------------------------------------*/
+
 #continue-button{
     background: var(--darkGrayBlue);
     border-radius: 2rem;
