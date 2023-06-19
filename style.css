@@ -1,4 +1,5 @@
 :root{
+    /*the values that do not have hsl in the front will have a modified alpha channel depending on the needs*/
     /*Primary Colors*/
     --lightRed: 0, 100%, 67%;
     --orangeyYellow: 39, 100%, 56%;
@@ -12,8 +13,7 @@
     /*Neutral colors*/
     --white: hsl(0, 0%, 100%);
     --paleBlue: hsl(221, 100%, 96%);
-    --lightLavender: hsl(241, 100%, 89%);
-    --lightLavenderAlpha: hsla(241, 100%, 89%, 0.5);
+    --lightLavender: 241, 100%, 89%;
     --darkGrayBlue: hsl(224, 30%, 27%);
     --darkGrayBlueAlpha: hsla(224, 30%, 27%, 0.65);
     /*Font weights*/
@@ -69,7 +69,7 @@ body{
 /*the purple backround section styles --------------------------------*/
 .result-section{
     background: linear-gradient(var(--lightSlateBlue), var(--lightRoyalBlue));
-    color: var(--lightLavender);
+    color: hsl(var(--lightLavender));
     border-radius: 0 0 2rem 2rem;
     height: 45%;
     flex-direction: column;
@@ -95,16 +95,16 @@ body{
 }
 
 .result-circle>p{
-    color: var(--lightLavenderAlpha);
+    color: hsla(var(--lightLavender), 0.5);
 }
 
-.result-section>h3{
+.result-section h3{
     color: var(--white);
-    font-size: 1.4rem;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
 }
 
 .result-description{
-    /* padding: 0 2.5rem 1.5rem 2.5rem; */
     padding: 0 2.5rem 1rem 2.5rem;
     text-align: center;
     font-size: 0.9rem;
@@ -118,6 +118,8 @@ body{
 }
 
 .summary-section>h1{
+    position: relative;
+    top: 8px;
     color: var(--darkGrayBlue);
     font-size: 1rem;
     font-weight: var(--fwSuperBold);
@@ -126,9 +128,9 @@ body{
 
 .grid-section{
     display: grid;
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr);
     gap: 1rem;
-    height: 90%;
+    height: 70%;
 }
 
 .summary-component{
@@ -192,9 +194,11 @@ body{
     border-radius: 2rem;
     border: none;
     color: var(--white);
-    padding: 0.75rem;
+    padding: 1rem;
     font-weight: var(--fwBold);
     cursor: pointer;
+    width: 100%;
+    margin-top: 30px;
 }
 
 #continue-button:is(:hover, :focus){
@@ -209,4 +213,64 @@ body{
 
 .attribution a{
     color: hsl(228, 45%, 44%); 
+}
+
+/*some changes to make the desktop design look good*/
+@media only screen and (min-width: 700px){
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .main-container{
+        width: 50vw;
+        height: 60vh;
+        flex-direction: row;
+        border-radius: 2rem;
+        box-shadow: 20px 20px 50px hsla(var(--lightLavender), 0.45);
+    }
+    
+    .result-section{
+        border-radius: 2rem;
+    }
+    
+    .result-section, .summary-section{
+        height: 100%;
+        width: 50%;
+    }
+
+    .result-section>h1{
+        font-size: 1.25rem;
+    }
+
+    .result-circle{
+        padding: 2.5rem;
+    }
+
+    .result-circle>h2{
+        font-size: 3.75rem;
+    }
+
+    .result-description{
+        padding: 0 4rem 1rem 4rem;
+    }
+
+    .grid-section{
+        height: 65%;
+    }
+
+    .summary-section>h1{
+        font-size: 1.25rem;
+        margin-bottom: 10px;
+    }
+
+    #continue-button{
+        margin-top: 45px;
+    }
+
+    footer{
+        position: fixed;
+        bottom: 10px;
+    }
 }
