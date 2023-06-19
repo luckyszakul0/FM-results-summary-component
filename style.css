@@ -149,6 +149,10 @@ body{
     height: 70%;
 }
 
+/*in summary-component styles the animation-delay is calculated from the custom variable that is set to each element that should use this animation*/
+/*(the #reaction, #memory, #verbal, #visual elements)*/
+/*this idea is heavily inspired by this video https://youtu.be/Qhaz36TZG5Y?t=406 */
+
 .summary-component{
     width: 100%;
     border-radius: 0.5rem;
