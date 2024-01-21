@@ -89,4 +89,4 @@ Another subject that requires my attention are JS Promises.
 ## Author
 
 - Github - [Łukasz Lubaszewski](https://github.com/luckyszakul0)
-- Frontend Mentor - [@Lukasz710](https://www.frontendmentor.io/profile/Lukasz710)
+- Frontend Mentor - [@luckyszakul0](https://www.frontendmentor.io/profile/luckyszakul0)
